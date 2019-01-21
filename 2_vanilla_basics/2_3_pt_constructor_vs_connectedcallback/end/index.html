@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='en'>
+<head></head>
+<body>
+    <script type='module'>
+        import './custom-progress-bar.js';
+                
+        (async () => {
+            let roleManager = await import('./createRoles.js');
+
+            roleManager.createRoles.init([
+                {
+                    tag: 'custom-progress-bar',
+                    role: 'slider'
+                }
+            ]);
+    
+            // creates a custom-progress-bar component with role slider
+            window.progressBar = document.create('custom-progress-bar');
+
+            // overrides the role property and sets it to progress
+            document.body.appendChild(progressBar);
+        })()        
+    </script>
+
+</body>
+</html>

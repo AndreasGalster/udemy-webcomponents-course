@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang='en'>
+<head></head>
+<body>
+    <script type='module'>
+        import './profile-card.js';
+        import {ProfileCard} from './profile-card.js';
+
+        // This is the second time customElements.define is called
+        customElements.define('profile-card', ProfileCard);
+    </script>
+
+    <profile-card></profile-card>
+</body>
+</html>

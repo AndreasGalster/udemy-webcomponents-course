@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang='en'>
+<head></head>
+<body>
+    <!-- Register with default name -->
+    <!--  
+        <script type='module'>
+            import './profile-card-register.js';
+        </script>
+        
+        <profile-card></profile-card>
+    -->
+        
+
+    <!-- Register with custom name -->
+    <script type='module'>
+        import {ProfileCard} from './profile-card.js';
+
+        customElements.define('people-card', ProfileCard);        
+    </script>
+
+    <people-card></people-card>
+</body>
+</html>
