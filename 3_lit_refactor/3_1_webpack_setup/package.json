@@ -9,12 +9,12 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^4.6.0",
-    "file-loader": "^3.0.1",
-    "nodemon": "^1.18.9",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "copy-webpack-plugin": "4.6.0",
+    "file-loader": "3.0.1",
+    "nodemon": "1.18.9",
+    "webpack": "4.29.0",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "3.1.14"
   },
   "dependencies": {
     "express": "^4.16.4"
