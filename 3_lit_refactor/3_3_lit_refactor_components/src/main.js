@@ -1,0 +1,1 @@
+import(/* webpackChunkName: "app-shell" */'./views/app-shell.js');
