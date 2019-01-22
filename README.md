@@ -1,19 +1,23 @@
 # udemy-webcomponents-course
-This contains the learning materials of the [Udemy course on webcomponents with lit-html & redux](https://www.udemy.com/webcomponents-apps)
+This contains the learning materials of the [Udemy course on webcomponents with lit-html & redux](https://www.udemy.com/webcomponents-apps). 
+
+You are free to follow this course without buying the course on Udemy, each folder contains a readme with instructions. However, I appreciate the support, you can buy the course [at a discounted price of $11.99 via this promo link](https://www.udemy.com/webcomponents-apps/?couponCode=GITHUB). Buying this course helps me support myself and enables me to add additional chapters to it.
 
 <br>
 
 **Some of the topics covered in the course are:**
 
 * Fundamental theory behind webcomponents, why they were invented and how it compares to other frameworks
+* An optional bonus chapter on important ES Next features used in the course
 * A coding chapter on vanilla webcomponents where you'll be writing a small app without any library
-* Afterwards we'll refactor our app to use lit-html & lit-element to make writing webcomponents easy, fun & efficient
+* Afterwards we'll refactor our app to use lit-html & lit-element, which makes writing webcomponents easy, fun & efficient
 * Before continuing you'll learn how to add unit & end-to-end tests to your webcomponents apps and run tests automatically when pushing to GitHub
+<!--
 * Next we are going to add more features to our app and start using Redux for state management
 * After we've added state management, we'll make sure that our app and components are accessible for people with disabilities
 * Then we'll turn our app into a production-ready app by adding best practices to our project
 * Lastly we will look at publishing our components to npm and how to create great demos
-
+-->
 
 <br><br>
 ### Cloning the course
