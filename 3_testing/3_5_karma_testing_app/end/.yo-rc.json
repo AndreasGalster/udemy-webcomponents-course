@@ -1,0 +1,6 @@
+{
+  "generator-open-wc": {
+    "tagName": "sample-tag",
+    "className": "SampleTag"
+  }
+}
