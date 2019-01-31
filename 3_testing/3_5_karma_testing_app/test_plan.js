@@ -2,7 +2,7 @@ dialog
 	it should open without data and not display anything, opened true
 	it should open with data and display content, opened true
 	it should close, opened false
-	itshould be opened false by default
+	it should be opened false by default
 
 
 template-renderer
@@ -17,9 +17,8 @@ app-shell
 	it should open the dialog on click on card
 
 
-
 profile-card
 	it should dispatch an event on click on element
-	it should contain no dom if nothing fed in, profileData isempty
+	// it should contain no dom if nothing fed in, profileData is empty
 	it should contain dom if data is fed in
 	it should contain profileData property but no attribute
