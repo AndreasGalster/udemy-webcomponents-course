@@ -26,7 +26,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: cd 3_testing/3_6_karma_code_coverage/end & ls & yarn install
+      - run: cd 3_testing/3_6_karma_code_coverage/end && ls && yarn install
 
       - save_cache:
           paths:
@@ -34,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn test
+      - run: ls && yarn test
