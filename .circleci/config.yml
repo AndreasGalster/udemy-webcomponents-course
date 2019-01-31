@@ -14,7 +14,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/repo/3_testing/3_6_karma_code_coverage/end
+    working_directory: ~/repo/3_testing/3_6_karma_code_coverage/end/
 
     steps:
       - checkout
