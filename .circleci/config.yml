@@ -34,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: ls && yarn test
+      - run: cd 3_testing/3_6_karma_code_coverage/end && ls && yarn test
