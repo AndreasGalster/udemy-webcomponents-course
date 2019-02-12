@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_54" data-name="Rectangle 54" width="32" height="32" transform="translate(1297 969)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="facebook-icon" transform="translate(-1297 -969)" clip-path="url(#clip-path)">
+    <g id="facebook" transform="translate(1299.958 972)">
+      <path id="Path_11" data-name="Path 11" d="M2.678,0H23.033a2.678,2.678,0,0,1,2.678,2.678V23.033a2.678,2.678,0,0,1-2.678,2.678H2.678A2.678,2.678,0,0,1,0,23.033V2.678A2.678,2.678,0,0,1,2.678,0Z" fill="#3b5999"/>
+      <path id="Path_12" data-name="Path 12" d="M222.439,68.285h2.143a.536.536,0,0,0,.536-.536V64.536a.536.536,0,0,0-.536-.536h-2.143a5.892,5.892,0,0,0-5.892,5.892V72.57h-2.678a.536.536,0,0,0-.536.536V76.32a.536.536,0,0,0,.536.536h2.678V86.5h4.285V76.856h2.678a.536.536,0,0,0,.508-.366l1.071-3.214a.536.536,0,0,0-.508-.7h-3.75V69.892A1.607,1.607,0,0,1,222.439,68.285Z" transform="translate(-202.62 -60.786)" fill="#fafafa"/>
+    </g>
+  </g>
+</svg>
