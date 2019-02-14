@@ -4,8 +4,6 @@ import "./profile-card.js";
 import "./profile-cards-animator.js";
 import "./profile-dialog.js";
 
-import faker from "faker";
-
 import "../components/author-highlight";
 import "../components/book-highlight";
 
@@ -13,104 +11,33 @@ import "../components/book-highlight";
 import {Routing} from '../utils/routing';
 
 import { inkVariables } from "@andreas-galster/inkling";
+import {
+  fixedTop,
+  absoluteView,
+  flxCtr, flx,
+  paddingAll,
+  radiusAll
+} from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
+import { inkReset } from "@andreas-galster/inkling";
+
+import "../components/max-width.js";
+
+
+
+import { updateMetadata } from 'pwa-helpers/metadata.js';
+
+updateMetadata({
+  title: 'My App - view 1',
+  description: 'This is my sample app',
+  url: window.location.href,
+  image: '/assets/book1.png'
+});
+
 
 // console.log(process.env.NODE_ENV);
 
 console.log(inkVariables);
 
-const quotesHeader = {
-  id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
-  firstName: faker.name.firstName(),
-  lastName: faker.name.lastName(),
-  typeOfPerson: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
-  quotes: [`${faker.lorem.sentence()} ${faker.lorem.sentence()}`],
-  pictures: {
-    headerPic: faker.random.image()
-  }
-};
-
-const authorPreview = {
-  id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
-  authorId: faker.random.uuid(),
-  author: {
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    typeOfPerson: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
-    categories: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
-    pictures: {
-      cardPic: faker.random.image()
-    }
-  }
-};
-
-const booksPreview = {
-  id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
-  authorId: faker.random.uuid(),
-  title: faker.lorem.sentence(),
-  author: {
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-  },
-  image: ['../assets/book1.png', '../assets/book2.png', '../assets/book3.png', '../assets/book4.png'],
-  teaser: `${faker.lorem.sentence()} ${faker.lorem.sentence()}`  
-};
-
-const quotesPreview = {
-  id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
-  authorId: faker.random.uuid(),
-  quote: faker.lorem.sentence(),
-  author: {
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    typeOfPerson: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
-    pictures: {
-      cardPic: faker.random.image()
-    }
-  }
-};
-
-const authorHighlight = {
-  id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
-  author: {
-    pictures: {
-      profilePic: faker.random.image()
-    },    
-    categories: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
-    socialMedia: [
-      {
-        networkName: 'facebook',
-        count: faker.random.number(),
-        link: faker.internet.url()
-      },
-      {
-        networkName: 'twitter',
-        count: faker.random.number(),
-        link: faker.internet.url()
-      },
-      {
-        networkName: 'instagram',
-        count: faker.random.number(),
-        link: faker.internet.url()
-      },            
-    ]
-  }
-};
-
-const bookHighlight = {
-  id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
-  title: faker.lorem.sentence(),
-  image: faker.random.image(),
-  affiliate: {
-    link: faker.internet.url(),
-    price: faker.commerce.price(),
-  }
-};
 
 
 @customElement("app-shell")
@@ -126,19 +53,8 @@ export class AppShell extends Routing(LitElement) {
     );
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.getPeople();
-  }
-
   createRenderRoot() {
     return this;
-  }
-
-  async getPeople() {
-    let peoplePromise = await fetch("https://randomuser.me/api/?results=50");
-    let res = await peoplePromise.json();
-    this.people = res.results;
   }
 
   render() {
@@ -155,16 +71,64 @@ export class AppShell extends Routing(LitElement) {
 
           --mdc-theme-primary: var(--primary);
           --mw: 1320px;
+
+          --bg-detail: #F6F6F6;
+          --bg-overview: #12161E;
         }
 
-        div {
-          display: flex;
-        }
+        app-shell {
+						padding-top: 70px;
+						${absoluteView}
+					}
 
-        div img {
-          width: 100%;
-          height: 100%;
-        }
+					a {
+						text-decoration: none;
+						cursor: pointer;
+					}
+
+          max-width {
+						${flxCtr}
+          }
+
+					header {
+						background-color: white;
+						z-index: 30;
+						height: 64px;
+						box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+            ${fixedTop}
+            ${flx}
+					}
+
+					a {
+						margin: 0;
+						font-size: 13px;
+						color: black;
+						font-size: 14px;
+						letter-spacing: 1px;
+						text-transform: none;
+						font-weight: 300;
+						${radiusAll.sm}
+						${paddingAll.sm}
+					}
+
+					a[active] {
+						color: var(--primary);
+					}
+
+          a::after {
+            display: block;
+            content: attr(title);
+            font-weight: bold;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+          }
+
+					a:hover {
+						font-weight: 600;
+						color: var(--primary);
+					}
+
 
         ._page[active] {
 						display: block;
@@ -175,11 +139,19 @@ export class AppShell extends Routing(LitElement) {
         }        
       </style>
 
+        <header>
+          <max-width>
+            <a href='/authors' ?active=${this.route === "/authors"}>Authors</a>
+            <a href='/books' ?active=${this.route === "/books"}>Books</a>
+            <a href='/quotes' ?active=${this.route === "/quotes"}>Quotes</a>                        
+          </max-width>
+				</header>
+
         <home-view class='_page' ?active=${this.route === "/"}></home-view>
         <authors-overview-view class='_page' ?active=${this.route === "/authors"}></authors-overview-view>
-        <authors-detail-view class='_page' ?active=${this.route === "/author"}></authors-detail-view>
+        <authors-detail-view class='_page' ?active=${this.route === "/authors/"}></authors-detail-view>
         <books-overview-view class='_page' ?active=${this.route === "/books"}></books-overview-view>
-        <books-detail-view class='_page' ?active=${this.route === "/book"}></books-detail-view>
+        <books-detail-view class='_page' ?active=${this.route === "/books/"}></books-detail-view>
         <quotes-overview-view class='_page' ?active=${this.route === "/quotes"}></quotes-overview-view>
     `;
   }

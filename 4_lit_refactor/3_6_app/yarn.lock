@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@andreas-galster/inkling@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@andreas-galster/inkling/-/inkling-0.3.0.tgz#8e2f1c55ddafd424ec924dad949549b1bd34e2f2"
-  integrity sha512-d+wmqjOX/kg4Bnunxz9n0Vc5xy9J7Ylh/n02P7+nlq+9ZVt0tuq2ZI1XWzFZBhZv7eJHQGcVPVYdb+b/TXPD8A==
+"@andreas-galster/inkling@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@andreas-galster/inkling/-/inkling-0.3.2.tgz#47a556b13d723e992379f15bf0ae9fb54a25182f"
+  integrity sha512-pAsttI8afI1vouZATNpef26JrMwV7mHC0d7833r4WGWVTSxU3uPWugWkwSkabzPuU5ozqhBCsboFhvURkhh40Q==
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
@@ -629,6 +629,13 @@
     esutils "^2.0.2"
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
+
+"@captaincodeman/redux-connect-element@^1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@captaincodeman/redux-connect-element/-/redux-connect-element-1.0.0-beta.0.tgz#1e1bbab7d3e02fc13e612cf20b3102b2b4b550f8"
+  integrity sha512-bQGhIdcuXpnS3tcdorATCtInEjfDf+Dszi/5jGWkkAshftDWYpRkHsh8Bh/c1GDy9B9nU27StgXo/Fc6QKBxfw==
+  dependencies:
+    redux "^4.0.0"
 
 "@material/animation@^0.40.1":
   version "0.40.1"
@@ -4054,6 +4061,11 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+pwa-helpers@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/pwa-helpers/-/pwa-helpers-0.9.1.tgz#9ea22fa1996ab97df73b276cae962621c3fd2532"
+  integrity sha512-4sP/C9sSxQ3w80AATmvCEI3R+MHzCwr2RSZEbLyMkeJgV3cRk7ySZRUrQnBDSA7A0/z6dkYtjuXlkhN1ZFw3iA==
+
 qs@6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -4162,7 +4174,7 @@ redux-first-routing@^0.3.0:
     history "^4.7.2"
     query-string "^5.0.0"
 
-redux@^4.0.1:
+redux@^4.0.0, redux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
   integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==

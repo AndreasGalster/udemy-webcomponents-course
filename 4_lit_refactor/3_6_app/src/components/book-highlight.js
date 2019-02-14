@@ -13,7 +13,7 @@ import {
 } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
 import { inkReset } from "@andreas-galster/inkling";
 
-class BookHighlight extends LitElement {
+export class BookHighlight extends LitElement {
   static styles = css`
     :host {
       cursor: pointer;

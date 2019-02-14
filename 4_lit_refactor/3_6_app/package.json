@@ -23,12 +23,14 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "@andreas-galster/inkling": "0.3.0",
+    "@andreas-galster/inkling": "0.3.2",
+    "@captaincodeman/redux-connect-element": "^1.0.0-beta.0",
     "@material/mwc-button": "^0.3.6",
     "@webcomponents/webcomponentsjs": "^2.2.4",
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "lit-element": "^2.0.1",
+    "pwa-helpers": "^0.9.1",
     "redux": "^4.0.1",
     "redux-first-routing": "^0.3.0",
     "universal-router": "^8.0.0"

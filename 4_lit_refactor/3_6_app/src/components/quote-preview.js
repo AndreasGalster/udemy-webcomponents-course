@@ -11,13 +11,36 @@ import {
   paddingAll,
   radiusAll
 } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
-import { inkReset } from "@andreas-galster/inkling";
+import { inkReset, uCSS } from "@andreas-galster/inkling";
 
-class QuotePreview extends LitElement {
+export class QuotePreview extends LitElement {
   static styles = css`
     :host {
       cursor: pointer;
+      display: block;
+      overflow: hidden;
+      flex-grow: 1;
+      margin: 10px;
+      ${uCSS(radiusAll.lg)}
+
+      text-align: center;
+      position: relative;
     }
+
+    :host(:hover) .content_wrapper {
+      transform: scale(1.05);
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+
+      ${uCSS(paddingAll.md)}
+    }
+
   `;
 
   @property({ type: Object }) quote = {};
@@ -27,21 +50,6 @@ class QuotePreview extends LitElement {
       ${inkReset}
 
       <style>
-        :host {
-          display: block;
-          overflow: hidden;
-          flex-grow: 1;
-          margin: 10px;
-          ${radiusAll.lg}
-
-          text-align: center;
-          position: relative;
-        }
-
-        :host(:hover) .content_wrapper {
-          transform: scale(1.05);
-        }
-
         .content_wrapper {
           transition: transform 0.5s ease-in-out;
           background: linear-gradient(
@@ -52,16 +60,6 @@ class QuotePreview extends LitElement {
             url(https://i1.wp.com/youberelentless.com/wp-content/uploads/2017/10/darren-hardy-motivational-speaker1.jpg?fit=770%2C462) no-repeat center center;
           background-size: cover, cover;
           padding-top: 100%;
-        }
-
-        a {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          bottom: 0;
-
-          ${paddingAll.md}
         }
       </style>
 

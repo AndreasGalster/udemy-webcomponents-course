@@ -2,7 +2,7 @@ import { LitElement, property, html, css } from "lit-element";
 import { Button } from "@material/mwc-button";
 import { inkReset } from "@andreas-galster/inkling";
 
-class QuotesHeader extends LitElement {
+export class QuotesHeader extends LitElement {
   static styles = css`
     :host {
       display: block;

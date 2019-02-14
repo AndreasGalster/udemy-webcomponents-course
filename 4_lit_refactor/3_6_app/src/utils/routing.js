@@ -4,22 +4,57 @@ import {configureStore} from '../store/store';
 import { property } from "lit-element";
 
 
-export const routeNames = {
+// export const routeNames = {
+//     // author
+//     home: "",
+//     // author
+//     authorsOverview: "authors",
+//     authorsDetail: "author",
+//     // books
+//     booksOverview: "books",
+//     booksDetail: "book",
+//     // quotes
+//     quotesOverview: "quotes"
+//   };
+
+
+  export const routeNames = {
     // author
-    home: "",
-    // author
-    authorsOverview: "authors",
-    authorsDetail: "author",
-    // books
-    booksOverview: "books",
-    booksDetail: "book",
+    home: {
+      name: "",
+      children: [],
+    },
+    authors: {
+      name: "authors",
+      children: [
+        {
+          path: '/:id',          // www.example.com/admin/users/john
+          action: () => '',
+        }                
+      ],
+    },
+    books: {
+      name: "books",
+      children: [
+        {
+          path: '/:id',          // www.example.com/admin/users/john
+          action: () => '',
+        }        
+      ],
+    },
     // quotes
-    quotesOverview: "quotes"
+    quotes: {
+      name: "quotes",
+      children: []
+    }
   };
 
+
 const routes = [];
-Object.values(routeNames).map(r => routes.push( {path: `/${r}`, action: () => ''} ))
+Object.values(routeNames).map(r => routes.push( {path: `/${r.name}`, children: r.children, action: () => ''} ))
+// Object.values(routeNames).map(r => routes.push( {path: `/${r}`, action: () => ''} ))
 console.log(routes);
+
 
 /* ---------- routes.js ---------- */
 // const routes = [
@@ -38,8 +73,22 @@ const store = configureStore(history)
 // Start the history listener, which automatically dispatches actions to keep the store in sync with the history
 startListener(history, store)
 
+
+const options = {
+  resolveRoute(context, params) {
+
+    console.log(context);
+    console.log(params);
+    if (typeof context.route.action === 'function') {
+      return context.route.action(context, params)
+    }
+    return undefined
+  },
+}
+
+
 // Create the router
-const router = new UniversalRouter(routes)
+const router = new UniversalRouter(routes, options)
 
 // Get the current pathname
 let currentLocation = store.getState().router.pathname
@@ -75,6 +124,41 @@ export const Routing = superclass =>
         this.loadRoute(currentLocation);
         // store.dispatch(push('/author'))
 
+
+        this.addEventListener('click', e => {
+
+            if (e.defaultPrevented || e.button !== 0 ||
+                e.metaKey || e.ctrlKey || e.shiftKey) return;
+        
+            const anchor = e.composedPath().filter(n => n.tagName === 'A')[0] || undefined;
+            if (!anchor || anchor.target ||
+                anchor.hasAttribute('download') ||
+                anchor.getAttribute('rel') === 'external') return;
+        
+            const href = anchor.href;
+            if (!href || href.indexOf('mailto:') !== -1) return;
+        
+            const location = window.location;
+            const origin = location.origin || location.protocol + '//' + location.host;
+            if (href.indexOf(origin) !== 0) return;
+        
+            e.preventDefault();
+            if (href !== location.href) {
+              console.log(e);
+              console.log(anchor.getAttribute('href'));
+                store.dispatch(push(anchor.getAttribute('href')));
+            }
+
+            // if(e.target.nodeName == 'A') {
+            //     e.preventDefault();
+            //     store.dispatch(push(e.target.getAttribute('href')));
+            // }
+        });
+    
+    }
+
+    dispatch() {
+        store.dispatch(push('/author'))
     }
 
     subscribe() {
@@ -96,9 +180,21 @@ export const Routing = superclass =>
     loadRoute(pathName) {
         // pathName = pathName.replace("/", "");
 
+
+        pathName.substr(0, pathName.lastIndexOf("/")+1);
+
+        if(pathName.substr(0, pathName.lastIndexOf("/")+1) !== '/') {
+          pathName = pathName.substr(0, pathName.lastIndexOf("/")+1)
+          var pathDetail = pathName.substr(pathName.lastIndexOf("/")+1, 1000)
+        }
+
+
         console.log(`loading ${pathName}`);
+        console.log(`loading ${pathDetail}`);
+
         router.resolve(pathName).then((h) => {
             this.route = pathName;
+            this.routeDetail = pathDetail; 
             // document.body.innerHTML = h
             this._loadViewDependency(pathName)
         })
@@ -117,26 +213,23 @@ export const Routing = superclass =>
       console.log(`loading chunk ${page}`);
 
       switch (page) {
-        case "":
+        case "/":
             await import(/* webpackChunkName: "home" */ "../views/home-view.js");
           break;
         case "/authors":
             await import(/* webpackChunkName: "authors-overview" */ "../views/authors-overview-view.js");
             break;
-        case "/author":
+        case "/authors/":
             await import(/* webpackChunkName: "authors-detail" */ "../views/authors-detail-view.js");
             break;
         case "/books":
             await import(/* webpackChunkName: "books-overview" */ "../views/books-overview-view.js");
             break;
-        case "/book":
+        case "/books/":
             await import(/* webpackChunkName: "books-detail" */ "../views/books-detail-view.js");
             break;
         case "/quotes":
             await import(/* webpackChunkName: "quotes-overview" */ "../views/quotes-overview-view.js");
-            break;            
-        case "/add-an-event":
-        // await import (/* webpackChunkName: "add-an-event" */ '../views/events-submit-view.js');
       }
 
       if ("serviceWorker" in navigator) {
