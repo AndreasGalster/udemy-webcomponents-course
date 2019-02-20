@@ -90,7 +90,7 @@ export class QuotePreview extends LitElement {
         <div class="content_wrapper"></div>
 
         <a
-            href="podcast?id=${this.quote.id}"
+            href="authors/${this.quote.author.humanId}"
           >
             <flex-align direction='column'>
               <flex-grow grow='1'></flex-grow>

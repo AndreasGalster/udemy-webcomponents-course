@@ -92,6 +92,11 @@ export class BookPreview extends LitElement {
         <img src=${this.book.image[Math.floor(Math.random()*this.book.image.length)]}>
 
         <div>
+
+        <a
+            href="books/${this.book.humanId}"
+          >
+
           <flex-align direction='column'>
             <flex-grow grow='1'></flex-grow>
             <flex-grow>
@@ -107,6 +112,8 @@ export class BookPreview extends LitElement {
               </h3>        
             </flex-grow>
           </flex-align>
+
+          </a>
         </div>
 
 

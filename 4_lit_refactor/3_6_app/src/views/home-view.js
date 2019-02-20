@@ -30,11 +30,7 @@ export class HomeView extends PageViewElement {
             ${uCSS(radiusAll.lg)}
             ${uCSS(paddingAll.xs)}
         }
-            
-        max-width {
-            padding-bottom: 100px;
-        }
-        
+                    
         flex-align {
             margin-top: 150px;
         }

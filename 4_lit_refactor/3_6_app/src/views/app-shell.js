@@ -21,6 +21,9 @@ import {
 import { inkReset } from "@andreas-galster/inkling";
 
 import "../components/max-width.js";
+import '../components/flex-grow';
+import '../components/flex-align';
+
 
 
 
@@ -59,16 +62,16 @@ export class AppShell extends Routing(LitElement) {
 
   // --secondary-fade: rgba(0, 61, 114, 0.82);
   render() {
-    return html`
+						// padding-top: 64px;
+            return html`
       ${inkVariables}
       <style>
         :root {
           --primary: #f30046;
           --primary-fade: rgba(243, 0, 70, 0.56);
-          --secondary: #0057a2;
+          --secondary: #0057A2;
           --secondary-fade: rgba(0, 61, 114, 0.86);
-
-          font-family: "Source Sans Pro";
+          --secondary-light: #D8E2F3;
 
           --mdc-theme-primary: var(--primary);
           --mw: 1320px;
@@ -76,11 +79,13 @@ export class AppShell extends Routing(LitElement) {
           --bg-detail: #F6F6F6;
           --bg-overview: #12161E;
           --bg-overview: hsla(60, 10%, 93%, 1);
+
+          font-family: "Source Sans Pro";
         }
 
         app-shell {
-						padding-top: 70px;
             background: var(--bg-overview);
+            padding-bottom: 50px;
 						${absoluteView}
 					}
 
@@ -98,7 +103,9 @@ export class AppShell extends Routing(LitElement) {
 						z-index: 30;
 						height: 64px;
 						box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
-            ${fixedTop}
+            position: sticky;
+            -webkit-position-sticky: sticky;            
+            top: 0;
             ${flx}
 					}
 
@@ -135,15 +142,48 @@ export class AppShell extends Routing(LitElement) {
 					
         ._page {
           display: none;
-        }        
+        }       
+
+        h1 {
+          color: var(--secondary);
+          font-size: 19px;
+          font-weight: 500;
+        } 
+
+        h2 {
+          color: rgba(0,0,0,0.35);
+          font-size: 13.5px;
+        }
+
+        h1, h2 {
+          line-height: 1.3;
+          margin: 0;
+        }
+
+
+
+        #disclaimer {
+          text-align: right;
+        }
       </style>
 
         <header>
           <max-width>
-            <a href='/' ?active=${this.route === "/"}>Home</a>
-            <a href='/authors' ?active=${this.route === "/authors"}>Authors</a>
-            <a href='/books' ?active=${this.route === "/books"}>Books</a>
-            <a href='/quotes' ?active=${this.route === "/quotes"}>Quotes</a>                        
+            <flex-align>
+              <flex-grow grow='1'>
+                <flex-align>
+                  <a href='/' ?active=${this.route === "/"}>Home</a>
+                  <a href='/authors' ?active=${this.route === "/authors"}>Authors</a>
+                  <a href='/books' ?active=${this.route === "/books"}>Books</a>
+                  <a href='/quotes' ?active=${this.route === "/quotes"}>Quotes</a>  
+                </flex-align>
+              </flex-grow>
+              <flex-grow id='disclaimer'>
+                <h1>Curated with ❤️ by Andreas Galster</h1>
+                <h2>Relationship & Dating Coach</h2>                      
+              </flex-grow>
+            </flex-align>
+
           </max-width>
 				</header>
 

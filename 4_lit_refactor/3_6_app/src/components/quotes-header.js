@@ -16,7 +16,7 @@ export class QuotesHeader extends LitElement {
       padding: 2px 0;
       width: 560px;
       margin-top: 15%;
-      margin-bottom: 35px;
+      margin-bottom: 40px;
       font-weight: 300;
       position: relative;
     }
@@ -43,12 +43,20 @@ export class QuotesHeader extends LitElement {
       opacity: 0.5;
     }
 
+    h2 {
+      font-size: 20px;
+    }
+
     h3 {
       opacity: 0.7;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
     }
 
     p {
       opacity: 0.3;
+      font-size: 14px;
     }
 
     section {

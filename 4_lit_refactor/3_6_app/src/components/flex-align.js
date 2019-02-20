@@ -29,6 +29,7 @@ export class FlexAlign extends LitElement {
     static styles = css`
         :host {
             display: flex;
+            width: 100%;
             height: 100%;
             flex-direction: var(--flex-direction);
             align-items: var(--align-items);

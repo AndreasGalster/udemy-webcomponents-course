@@ -14,9 +14,9 @@ export const quotesHeader = {
 
 export const authorPreview = {
   id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
   authorId: faker.random.uuid(),
   author: {
+    humanId: faker.random.uuid(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     typeOfPerson: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
@@ -46,6 +46,7 @@ export const quotesPreview = {
   authorId: faker.random.uuid(),
   quote: faker.lorem.sentence(),
   author: {
+    humanId: faker.random.uuid(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     typeOfPerson: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
@@ -57,8 +58,8 @@ export const quotesPreview = {
 
 export const authorHighlight = {
   id: faker.random.uuid(),
-  humanId: faker.random.uuid(),
   author: {
+    humanId: faker.random.uuid(),
     pictures: {
       profilePic: faker.random.image()
     },    

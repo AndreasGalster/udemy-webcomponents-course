@@ -23,7 +23,6 @@ export class AuthorPreview extends LitElement {
       display: block;
       overflow: hidden;
       flex-grow: 1;
-      margin: 10px;
       position: relative;
       color: white;
 
@@ -114,7 +113,7 @@ updateStyles(prop, style) {
         <div></div>
 
         <a
-            href="authors/${this.person.id}"
+            href="authors/${this.person.author.humanId}"
           >
 
               <flex-align direction='column'>
