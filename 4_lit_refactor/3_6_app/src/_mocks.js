@@ -31,13 +31,13 @@ export const booksPreview = {
   id: faker.random.uuid(),
   humanId: faker.random.uuid(),
   authorId: faker.random.uuid(),
-  title: faker.lorem.sentence(),
+  teaser: `${faker.lorem.paragraph()} ${faker.lorem.paragraph()}`,  
+  title: `${faker.lorem.word()} ${faker.lorem.word()} ${faker.lorem.word()} ${faker.lorem.word()} ${faker.lorem.word()}`,
   author: {
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
   },
   image: ['../assets/book1.png', '../assets/book2.png', '../assets/book3.png', '../assets/book4.png'],
-  teaser: `${faker.lorem.sentence()} ${faker.lorem.sentence()}`  
 };
 
 export const quotesPreview = {

@@ -13,6 +13,9 @@ import {
   border
 } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
 import { inkReset, uCSS } from "@andreas-galster/inkling";
+import '../components/flex-grow';
+import '../components/flex-align';
+
 
 console.log(uCSS);
 
@@ -26,7 +29,7 @@ export class BookPreview extends LitElement {
       color: white;
       position: relative;
       overflow: hidden;
-      ${uCSS(border.g80)}
+      ${uCSS(border.g90)}
       ${uCSS(radiusAll.lg)}
     }
 
@@ -51,8 +54,29 @@ export class BookPreview extends LitElement {
       width: 100%;
       height: 100%;
       object-fit: cover;
-
     }    
+
+    h1 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      line-height: 1.3;
+      letter-spacing: 0.2px;
+    }
+
+    h2 {
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.7;
+      text-transform: capitalize;
+      line-height: 1;
+    }
+
   `;
 
   @property({ type: Object }) book = {};
@@ -68,16 +92,21 @@ export class BookPreview extends LitElement {
         <img src=${this.book.image[Math.floor(Math.random()*this.book.image.length)]}>
 
         <div>
-          <h1>
-            ${this.book.teaser}
-          </h1>
+          <flex-align direction='column'>
+            <flex-grow grow='1'></flex-grow>
+            <flex-grow>
+              <h1>
+                ${this.book.teaser}
+              </h1>
 
-          <h1>
-            ${this.book.title}
-          </h1>
-          <h2>
-            ${this.book.author.firstName} ${this.book.author.firstName}
-          </h2>        
+              <h2>
+                ${this.book.title}
+              </h2>
+              <h3>
+                ${this.book.author.firstName} ${this.book.author.firstName}
+              </h3>        
+            </flex-grow>
+          </flex-align>
         </div>
 
 

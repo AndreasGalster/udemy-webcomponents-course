@@ -12,6 +12,9 @@ import {
   radiusAll
 } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
 import { inkReset, uCSS } from "@andreas-galster/inkling";
+import '../components/flex-grow';
+import '../components/flex-align';
+
 
 export class AuthorPreview extends LitElement {
   static styles = css`
@@ -21,9 +24,10 @@ export class AuthorPreview extends LitElement {
       overflow: hidden;
       flex-grow: 1;
       margin: 10px;
-      ${uCSS(radiusAll.lg)}
-
       position: relative;
+      color: white;
+
+      ${uCSS(radiusAll.lg)}
     }
 
     mwc-chip {
@@ -32,7 +36,7 @@ export class AuthorPreview extends LitElement {
       color: var(--secondary);
       border-radius: 50px;
       padding: 2px 9px;
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-size: 12px;
       margin-right: 3px;
       margin-top: 22px;
@@ -93,6 +97,18 @@ updateStyles(prop, style) {
           background-size: cover, cover;          
         }
 
+        h1 {
+          font-size: 23px;
+          font-weight: 600;
+        }
+
+        h2 {
+          font-size: 16px;
+          font-weight: 500;
+          opacity: 0.7;
+          text-transform: capitalize;
+          line-height: 1;
+        }
       </style>
 
         <div></div>
@@ -100,17 +116,23 @@ updateStyles(prop, style) {
         <a
             href="authors/${this.person.id}"
           >
-              <h1>
-                ${this.person.author.firstName} ${this.person.author.firstName}
-              </h1>
-              <h2>${this.person.author.typeOfPerson.join(", ")}</h2>
 
-              ${this.person.author.categories.map(
-                c =>
-                  html`
-                    <mwc-chip>${c}</mwc-chip>
-                  `
-              )}
+              <flex-align direction='column'>
+                <flex-grow grow='1'></flex-grow>
+                <flex-grow>
+                  <h1>
+                    ${this.person.author.firstName} ${this.person.author.firstName}
+                  </h1>
+                  <h2>${this.person.author.typeOfPerson.join(", ")}</h2>
+
+                  ${this.person.author.categories.map(
+                    c =>
+                    html`
+                        <mwc-chip>${c}</mwc-chip>
+                      `
+                  )}
+                </flex-grow>
+              </flex-align>
           </a>
 
 

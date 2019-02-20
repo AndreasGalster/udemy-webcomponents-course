@@ -57,6 +57,7 @@ export class AppShell extends Routing(LitElement) {
     return this;
   }
 
+  // --secondary-fade: rgba(0, 61, 114, 0.82);
   render() {
     return html`
       ${inkVariables}
@@ -65,7 +66,7 @@ export class AppShell extends Routing(LitElement) {
           --primary: #f30046;
           --primary-fade: rgba(243, 0, 70, 0.56);
           --secondary: #0057a2;
-          --secondary-fade: rgba(0, 61, 114, 0.82);
+          --secondary-fade: rgba(0, 61, 114, 0.86);
 
           font-family: "Source Sans Pro";
 
@@ -74,10 +75,12 @@ export class AppShell extends Routing(LitElement) {
 
           --bg-detail: #F6F6F6;
           --bg-overview: #12161E;
+          --bg-overview: hsla(60, 10%, 93%, 1);
         }
 
         app-shell {
 						padding-top: 70px;
+            background: var(--bg-overview);
 						${absoluteView}
 					}
 
@@ -111,10 +114,6 @@ export class AppShell extends Routing(LitElement) {
 						${paddingAll.sm}
 					}
 
-					a[active] {
-						color: var(--primary);
-					}
-
           a::after {
             display: block;
             content: attr(title);
@@ -124,7 +123,7 @@ export class AppShell extends Routing(LitElement) {
             visibility: hidden;
           }
 
-					a:hover {
+					a[active], a:hover {
 						font-weight: 600;
 						color: var(--primary);
 					}
@@ -141,6 +140,7 @@ export class AppShell extends Routing(LitElement) {
 
         <header>
           <max-width>
+            <a href='/' ?active=${this.route === "/"}>Home</a>
             <a href='/authors' ?active=${this.route === "/authors"}>Authors</a>
             <a href='/books' ?active=${this.route === "/books"}>Books</a>
             <a href='/quotes' ?active=${this.route === "/quotes"}>Quotes</a>                        

@@ -12,6 +12,9 @@ import {
   radiusAll
 } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
 import { inkReset, uCSS } from "@andreas-galster/inkling";
+import '../components/flex-grow';
+import '../components/flex-align';
+
 
 export class QuotePreview extends LitElement {
   static styles = css`
@@ -21,6 +24,7 @@ export class QuotePreview extends LitElement {
       overflow: hidden;
       flex-grow: 1;
       margin: 10px;
+      color: white;
       ${uCSS(radiusAll.lg)}
 
       text-align: center;
@@ -39,6 +43,26 @@ export class QuotePreview extends LitElement {
       bottom: 0;
 
       ${uCSS(paddingAll.md)}
+    }
+
+    h1 {
+      font-size: 21px;
+      font-weight: 300;
+      margin-bottom: 30px;
+      line-height: 1.1;      
+    }
+
+    h2 {
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.7;
+      text-transform: capitalize;
+      line-height: 1;
     }
 
   `;
@@ -68,14 +92,19 @@ export class QuotePreview extends LitElement {
         <a
             href="podcast?id=${this.quote.id}"
           >
-          <h1>
-                ${this.quote.quote}
-              </h1>
+            <flex-align direction='column'>
+              <flex-grow grow='1'></flex-grow>
+              <flex-grow>
+                <h1>
+                  ${this.quote.quote}
+                </h1>
 
-              <h2>
-                ${this.quote.author.firstName} ${this.quote.author.firstName}
-              </h2>
-              <h3>${this.quote.author.typeOfPerson.join(", ")}</h3>
+                <h2>
+                  ${this.quote.author.firstName} ${this.quote.author.firstName}
+                </h2>
+                <h3>${this.quote.author.typeOfPerson.join(", ")}</h3>
+              </flex-grow>
+            </flex-align>
           </a>
 
 
