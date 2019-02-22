@@ -11,8 +11,8 @@ export class FlexGrow extends LitElement {
     // }
 
     updated(changedProps) {
-        console.log(changedProps.get('grow'));
-        console.log(this.grow);
+        // console.log(changedProps.get('grow'));
+        // console.log(this.grow);
         // changedProps.map(prop => {
         //     console.log(prop);
         // })

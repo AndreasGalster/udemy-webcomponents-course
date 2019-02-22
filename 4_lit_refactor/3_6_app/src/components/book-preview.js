@@ -17,8 +17,6 @@ import '../components/flex-grow';
 import '../components/flex-align';
 
 
-console.log(uCSS);
-
 export class BookPreview extends LitElement {
   static styles = css`
     :host {

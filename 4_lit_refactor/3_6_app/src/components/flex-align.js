@@ -13,8 +13,8 @@ export class FlexAlign extends LitElement {
     // }
 
     updated(changedProps) {
-        console.log(changedProps);
-        console.log(changedProps.get('grow'));
+        // console.log(changedProps);
+        // console.log(changedProps.get('grow'));
         // changedProps.map(prop => {
         //     console.log(prop);
         // })
