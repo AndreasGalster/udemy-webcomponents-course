@@ -23,7 +23,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "@andreas-galster/inkling": "0.3.2",
+    "@andreas-galster/inkling": "0.3.4",
     "@captaincodeman/redux-connect-element": "^1.0.0-beta.0",
     "@material/mwc-button": "^0.3.6",
     "@webcomponents/webcomponentsjs": "^2.2.4",

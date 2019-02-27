@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@andreas-galster/inkling@0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@andreas-galster/inkling/-/inkling-0.3.2.tgz#47a556b13d723e992379f15bf0ae9fb54a25182f"
-  integrity sha512-pAsttI8afI1vouZATNpef26JrMwV7mHC0d7833r4WGWVTSxU3uPWugWkwSkabzPuU5ozqhBCsboFhvURkhh40Q==
+"@andreas-galster/inkling@0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@andreas-galster/inkling/-/inkling-0.3.4.tgz#8202e028f6cb376b2292767762689be3c4ef86a0"
+  integrity sha512-CT+t0xpBDYZOV0S6ts58GIG27ssWjjOYsaNhOvusGgoxgy8NZUhyOwA6rVEVsC3yrf79fyBKKkObLuC3cFN0zw==
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
