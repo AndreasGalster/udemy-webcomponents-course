@@ -23,7 +23,6 @@ export class BookPreview extends LitElement {
       cursor: pointer;
       display: block;
       flex: auto;
-      margin: 10px;
       color: white;
       position: relative;
       overflow: hidden;
@@ -92,7 +91,7 @@ export class BookPreview extends LitElement {
         <div>
 
         <a
-            href="books/${this.book.humanId}"
+            href="/books/${this.book.humanId}"
           >
 
           <flex-align direction='column'>

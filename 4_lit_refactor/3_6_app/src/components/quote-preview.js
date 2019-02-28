@@ -23,7 +23,6 @@ export class QuotePreview extends LitElement {
       display: block;
       overflow: hidden;
       flex-grow: 1;
-      margin: 10px;
       color: white;
       ${uCSS(radiusAll.lg)}
 
@@ -90,7 +89,7 @@ export class QuotePreview extends LitElement {
         <div class="content_wrapper"></div>
 
         <a
-            href="authors/${this.quote.author.humanId}"
+            href="/authors/${this.quote.author.humanId}"
           >
             <flex-align direction='column'>
               <flex-grow grow='1'></flex-grow>

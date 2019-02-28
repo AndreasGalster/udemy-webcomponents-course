@@ -71,10 +71,10 @@ export class AppShell extends Routing(LitElement) {
           --primary-fade: rgba(243, 0, 70, 0.56);
           --secondary: #0057A2;
           --secondary-fade: rgba(0, 61, 114, 0.86);
-          --secondary-light: #D8E2F3;
+          --secondary-light: #eff3fa;
 
           --mdc-theme-primary: var(--primary);
-          --mw: 1320px;
+          --mw: 1220px;
 
           --bg-detail: #F6F6F6;
           --bg-overview: #12161E;
@@ -160,7 +160,9 @@ export class AppShell extends Routing(LitElement) {
           margin: 0;
         }
 
-
+        a:first-child {
+          margin-left: calc(-1 *var(--size-sm));
+        }
 
         #disclaimer {
           text-align: right;

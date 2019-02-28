@@ -5,8 +5,24 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes'>
 
+    <base href="http://localhost:9000/">
     <script src='/app.js' async></script>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet"> -->
+    <script>
+        WebFontConfig = {
+          google: { families: [ 'Source+Sans+Pro:300,400,600' ] }
+        };
+        (function() {
+          var wf = document.createElement('script');
+          wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+          wf.type = 'text/javascript';
+          wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })(); 
+    </script>
+
 </head>
 <body>
     <app-shell></app-shell>

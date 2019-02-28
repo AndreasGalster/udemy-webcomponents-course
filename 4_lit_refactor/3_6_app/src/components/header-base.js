@@ -1,12 +1,16 @@
 import { LitElement, property, html, css } from "lit-element";
-import { Button } from "@material/mwc-button";
+import { ApolloQuery } from '@apollo-elements/lit-apollo';
+import { apolloClient } from '../utils/apollo_client';
+
 import { inkReset } from "@andreas-galster/inkling";
 import "../components/max-width.js";
 
 
-export class HeaderBase extends LitElement {
+// export class HeaderBase extends LitElement {
+export class HeaderBase extends ApolloQuery {
   @property({ type: Object }) item = {};
   @property({ type: String }) picture;
+  client = apolloClient;
 
   // static styles = [
     static get styles() { 
@@ -16,6 +20,8 @@ export class HeaderBase extends LitElement {
             display: block;
             color: white;
             overflow: auto;
+            position: sticky;
+            top: 64px;
           }
 
           h1 {
@@ -24,7 +30,7 @@ export class HeaderBase extends LitElement {
 
           max-width {
             position: relative;
-            padding-top: 35%;            
+            padding-top: 27%;            
           }
         `
     ]};
@@ -52,6 +58,9 @@ export class HeaderBase extends LitElement {
 	}
 
   render() {
+    const { data, error, loading } = this;
+    const { item = {} } = data || {}
+
     return html`
       ${inkReset}
 

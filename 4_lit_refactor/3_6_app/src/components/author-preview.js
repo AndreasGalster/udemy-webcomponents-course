@@ -113,7 +113,7 @@ updateStyles(prop, style) {
         <div></div>
 
         <a
-            href="authors/${this.person.author.humanId}"
+            href="/authors/${this.person.author.humanId}"
           >
 
               <flex-align direction='column'>

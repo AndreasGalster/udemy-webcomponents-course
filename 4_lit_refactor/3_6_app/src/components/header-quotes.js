@@ -1,13 +1,31 @@
 import { LitElement, property, html, css } from "lit-element";
-import { Button } from "@material/mwc-button";
-import { inkReset } from "@andreas-galster/inkling";
 import { HeaderBase } from "./header-base";
-
+import gql from 'graphql-tag';
 import "../components/flex-grow.js";
 import "../components/flex-align.js";
 
+const query = gql`
+  query {
+    getQuote {
+      quote
+      author {
+        humanId
+        firstName
+        lastName
+        typeOfPerson
+      }
+    }
+  }
+`;
+
+
 
 export class HeaderQuotes extends HeaderBase {
+  constructor() {
+    super();
+    this.query = query;
+  }
+
     // static styles = [ 
     static get styles() { 
       return [
@@ -20,7 +38,7 @@ export class HeaderQuotes extends HeaderBase {
 
       footer {
         position: absolute;
-        bottom: 40px;  
+        bottom: 35px;  
         right: 0;
         left: 0;              
       }
@@ -81,15 +99,10 @@ export class HeaderQuotes extends HeaderBase {
     // `];
 
   updated(changedProps) {
-    console.log(changedProps);
-    console.log(this.item.pictures.headerPic);
-    console.log(changedProps.get('item'));
-
     if(this.item) {
       this.picture = this.item.pictures.headerPic; 
     }
 
-    console.log(this.picture);
   }
 
   header() {
@@ -116,7 +129,7 @@ export class HeaderQuotes extends HeaderBase {
             <h2>${this.item.firstName} ${this.item.lastName}</h2>
             <h3>${this.item.typeOfPerson.join(", ")}</h3>
           </flex-grow>
-          <mwc-button outlined>SEE PROFILE</mwc-button>
+          <a href='/authors/${this.item.humanId}'><mwc-button outlined>SEE PROFILE</mwc-button></a>
         </flex-align>    
     `;
 	}

@@ -40,6 +40,7 @@ export class AuthorHighlight extends LitElement {
       background: white;
       display: block;
       max-width: 333px;
+      min-width: 280px;
       box-sizing: border-box;
 
       ${uCSS(paddingAll.md)}

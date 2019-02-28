@@ -12,6 +12,19 @@ export const quotesHeader = {
   }
 };
 
+export const booksHeader = {
+  id: faker.random.uuid(),
+  humanId: faker.random.uuid(),
+  firstName: faker.name.firstName(),
+  lastName: faker.name.lastName(),
+  typeOfPerson: [faker.lorem.word(), faker.lorem.word(), faker.lorem.word()],
+  quotes: [`${faker.lorem.sentence()} ${faker.lorem.sentence()}`],
+  pictures: {
+    headerPic: faker.random.image()
+  }
+};
+
+
 export const authorPreview = {
   id: faker.random.uuid(),
   authorId: faker.random.uuid(),

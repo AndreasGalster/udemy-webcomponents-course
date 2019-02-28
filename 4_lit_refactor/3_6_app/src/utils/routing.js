@@ -53,7 +53,7 @@ import { property } from "lit-element";
 const routes = [];
 Object.values(routeNames).map(r => routes.push( {path: `/${r.name}`, children: r.children, action: () => ''} ))
 // Object.values(routeNames).map(r => routes.push( {path: `/${r}`, action: () => ''} ))
-console.log(routes);
+// console.log(routes);
 
 
 /* ---------- routes.js ---------- */
@@ -77,8 +77,8 @@ startListener(history, store)
 const options = {
   resolveRoute(context, params) {
 
-    console.log(context);
-    console.log(params);
+    // console.log(context);
+    // console.log(params);
     if (typeof context.route.action === 'function') {
       return context.route.action(context, params)
     }
@@ -144,10 +144,12 @@ export const Routing = superclass =>
         
             e.preventDefault();
             if (href !== location.href) {
-              console.log(e);
+              // console.log(e);
               console.log(anchor.getAttribute('href'));
-                store.dispatch(push(anchor.getAttribute('href')));
+                store.dispatch(push(`${anchor.getAttribute('href')}`));
             }
+
+            // store.dispatch(push('/author'))
 
             // if(e.target.nodeName == 'A') {
             //     e.preventDefault();
@@ -155,10 +157,6 @@ export const Routing = superclass =>
             // }
         });
     
-    }
-
-    dispatch() {
-        store.dispatch(push('/author'))
     }
 
     subscribe() {
@@ -189,8 +187,8 @@ export const Routing = superclass =>
         }
 
 
-        console.log(`loading ${pathName}`);
-        console.log(`loading ${pathDetail}`);
+        // console.log(`loading ${pathName}`);
+        // console.log(`loading ${pathDetail}`);
 
         router.resolve(pathName).then((h) => {
             this.route = pathName;
@@ -210,7 +208,7 @@ export const Routing = superclass =>
      * 5) Set loaded state to true if child component doesn't do so via data fetching
      */
     async _loadViewDependency(page) {
-      console.log(`loading chunk ${page}`);
+      // console.log(`loading chunk ${page}`);
 
       switch (page) {
         case "/":

@@ -61,12 +61,12 @@ export class HeaderBooks extends HeaderBase {
 
           header {
             position: absolute;
-            top: 80px;                
+            top: 60px;                
           }
 
           footer {
             position: absolute;
-            bottom: 40px;            
+            bottom: 30px;            
           }
         </style>
 
