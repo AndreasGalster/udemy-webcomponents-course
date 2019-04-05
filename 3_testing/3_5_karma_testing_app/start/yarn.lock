@@ -629,7 +629,7 @@
   resolved "https://registry.yarnpkg.com/@bundled-es-modules/parse5/-/parse5-5.1.0.tgz#f28af4971e1fb1591e89ca98103f0c2d7221f0ab"
   integrity sha512-PKJawqBbwYguhMqpTKSDVNjU2sNf+cROglVnVFOM/KI59vkqpAP22ngno5NDHciNIukqrpFNrRMxEQhuMyShSg==
 
-"@commitlint/cli@^7.0.0":
+"@commitlint/cli@7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.4.0.tgz#18dd304d2e4c87edd5e575f3ae671da6c64b5d7d"
   integrity sha512-wwjLX+8dkqgiQgIDcKpwSoYC+vWp/njw+Q0f+TPtSB3KCARmb9A4EWmDzFocYzK1goJT+j472ZG87GqUOHmChg==
@@ -646,7 +646,7 @@
     resolve-from "4.0.0"
     resolve-global "0.1.0"
 
-"@commitlint/config-conventional@^7.0.0":
+"@commitlint/config-conventional@7.3.1":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-7.3.1.tgz#ed96c14200ebfe344944540580a883ef39552a70"
   integrity sha512-KPgL+wvXReqi0tvmjV0NQI+d4QwK125K1qimJtM+/uArR7P4AAlQxdXGnZ5kBtsTIzg9O9FhUS49UwqffmxijA==
@@ -791,7 +791,7 @@
     "@open-wc/semantic-dom-diff" "^0.7.6"
     "@types/chai" "^4.1.7"
 
-"@open-wc/eslint-config@^0.3.0":
+"@open-wc/eslint-config@0.3.8":
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/@open-wc/eslint-config/-/eslint-config-0.3.8.tgz#87ab941893dbe93319154d64af592132812eaa44"
   integrity sha512-dXNyo1Svc5tc6Aw5131RiIXZlucDpCk13g/FdJZzm5DVinnQV2APR3croYg8oVAMK9UpIDeKUgHIl5yPpe5Zng==
@@ -802,7 +802,7 @@
     eslint-plugin-html "^4.0.0"
     eslint-plugin-import "^2.0.0"
 
-"@open-wc/prettier-config@^0.1.0":
+"@open-wc/prettier-config@0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@open-wc/prettier-config/-/prettier-config-0.1.5.tgz#d1450455ac788e2ac61931b337e05fda30d1ac22"
   integrity sha512-xcHd3MknVOAtVbtLO8C09GAUOVi3Kb7ScuwZG8Faox/TbUEUx5jMKm+GVhYB8a6ZBsffPWRa0ataVRS7yxrbcw==
@@ -824,7 +824,7 @@
   resolved "https://registry.yarnpkg.com/@open-wc/testing-helpers/-/testing-helpers-0.7.9.tgz#be0b0d809641324ecb5312c18d8d494d6a9f3ae9"
   integrity sha512-d4Lg6py6oTz+wFr6Yt8o62H8oFVaH6zJA8pv3+l3qMjQvT4INVCMDl5ikDP6qycLd3wTC9O1+FzyxA4mEs31kg==
 
-"@open-wc/testing-karma-bs@^0.2.0":
+"@open-wc/testing-karma-bs@0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@open-wc/testing-karma-bs/-/testing-karma-bs-0.2.7.tgz#25ada9f9f43486e38c81a195ec4fd20489b843dc"
   integrity sha512-6g2Xio3vH4G9nIyVoiuuL+zS6oo0HRLCLv+UUhUgZPyvNTYt2PJEj8E4Xu88/dnvrbZR6YhTbLtp6I3MUkUCZA==
@@ -832,7 +832,7 @@
     "@open-wc/testing-karma" "^0.4.7"
     karma-browserstack-launcher "^1.0.0"
 
-"@open-wc/testing-karma@^0.4.0", "@open-wc/testing-karma@^0.4.7":
+"@open-wc/testing-karma@0.4.7", "@open-wc/testing-karma@^0.4.7":
   version "0.4.7"
   resolved "https://registry.yarnpkg.com/@open-wc/testing-karma/-/testing-karma-0.4.7.tgz#4d812c20d554b514e48c945ccd1e2b488041dfa6"
   integrity sha512-CNkQzVNPv7vvFRf4VXa30v0uBu+7JmaCGE/0aazbzzcfvpdOzdC750T4kNrk0X4GfvLpp7FZdGeIaico7QoUJA==
@@ -856,7 +856,7 @@
     karma-webpack "^5.0.0-alpha.0"
     webpack "^4.0.0"
 
-"@open-wc/testing@^0.9.0":
+"@open-wc/testing@0.9.11":
   version "0.9.11"
   resolved "https://registry.yarnpkg.com/@open-wc/testing/-/testing-0.9.11.tgz#0ff1d8416e09b9761cc09f4e2ac371f2d1309a1e"
   integrity sha512-ujKALjHNwJAZlx4SmETrRq1uT4Wax6VEVn6nY5Tm9KjE65qaNnknMXtZui9Lnv+wAN06Fu/cIB/dx2IGLLM3OA==
@@ -3503,7 +3503,7 @@ https-proxy-agent@^2.2.1:
     agent-base "^4.1.0"
     debug "^3.1.0"
 
-husky@^1.0.0:
+husky@1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/husky/-/husky-1.3.1.tgz#26823e399300388ca2afff11cfa8a86b0033fae0"
   integrity sha512-86U6sVVVf4b5NYSZ0yvv88dRgBSSXXmHaiq5pP4KDj5JVzdwKgBjEtUPOm8hcoytezFwbU+7gotXNhpHdystlg==
@@ -4229,7 +4229,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@^8.0.0:
+lint-staged@8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-8.1.1.tgz#4a9837c75ea23d1ea81f2c5b5f334153cc7f7932"
   integrity sha512-6C9tmmCedjDYQMzHydT5mXRtmEgpGUQDoIl+Ser8cfI/n9grsRUsuG2jd1BWqGf62OV+BV+6n/Drt82uYTCgJg==
@@ -6678,7 +6678,7 @@ watchpack@^1.5.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
-webpack-merge@^4.1.5:
+webpack-merge@4.2.1, webpack-merge@^4.1.5:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.2.1.tgz#5e923cf802ea2ace4fd5af1d3247368a633489b4"
   integrity sha512-4p8WQyS98bUJcCvFMbdGZyZmsKuWjWVnVHnAS3FFg0HDaRVrPbkivx2RYCre8UiemD67RsiFFLfn4JhLAin8Vw==
