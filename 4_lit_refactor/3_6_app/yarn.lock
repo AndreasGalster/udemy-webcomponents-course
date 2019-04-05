@@ -7,29 +7,29 @@
   resolved "https://registry.yarnpkg.com/@andreas-galster/inkling/-/inkling-0.3.4.tgz#8202e028f6cb376b2292767762689be3c4ef86a0"
   integrity sha512-CT+t0xpBDYZOV0S6ts58GIG27ssWjjOYsaNhOvusGgoxgy8NZUhyOwA6rVEVsC3yrf79fyBKKkObLuC3cFN0zw==
 
-"@apollo-elements/lib@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@apollo-elements/lib/-/lib-0.0.4.tgz#dff51f3c83f57296e7a25025a5bffa878947f72c"
-  integrity sha512-o6ti1VfnGliJK1ZwgK2Djruav6JKi38rS1RAFc+IEowGC+/+3cEXzRJ9pViPLxq1WWh2JzSqEzCmS8pocOVxhg==
+"@apollo-elements/lib@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@apollo-elements/lib/-/lib-0.0.6.tgz#31b4953f8e7a51c0a783ea9c3aef86769e728c28"
+  integrity sha512-oLooTfuIy1+DLXGL3qqOYJWxVYdKysAR4DYcltzKWUq8gYWXH+4oIzJF0pps8xJqyVC4EK9VNgFNZlgjn5yfQg==
   dependencies:
-    crocks "^0.9.4"
+    crocks "^0.11.1"
     graphql-tag "^2.10.1"
 
-"@apollo-elements/lit-apollo@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@apollo-elements/lit-apollo/-/lit-apollo-0.0.9.tgz#8bd7c26695c22e6a2caba863604db6b1c11f40ef"
-  integrity sha512-j/quoLXM4Jf4yG8B5pmUWsQezBqAYoWIiS1NdqRfWOsFqxRtgIMyEqlkWE+LYwRXrPIPJ1Y14ZYLY7jarAw9GA==
+"@apollo-elements/lit-apollo@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@apollo-elements/lit-apollo/-/lit-apollo-0.0.11.tgz#3ab76276b6b1d224840fcc1682f637df8b6ddaa5"
+  integrity sha512-jy5Dyy12//h3MbVT38RW65ysM3titVtb+WPMO6NAt/o00gQk3bL8z4e8MAS+LnN8NBUUxHQQViZM8C+0qGp17g==
   dependencies:
-    "@apollo-elements/mixins" "^0.0.9"
+    "@apollo-elements/mixins" "^0.0.11"
 
-"@apollo-elements/mixins@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@apollo-elements/mixins/-/mixins-0.0.9.tgz#9bb81fb4339fc0143bf9541d25474c24d3443e4c"
-  integrity sha512-3PdFbMQY8uDblHkE29JEBg7h97ZaAu3rFbhlVSFBlkT0z/UdJDuXwfrFAQeTTWnD+HWMEv+OBGSvV02XaA2Hig==
+"@apollo-elements/mixins@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@apollo-elements/mixins/-/mixins-0.0.11.tgz#889143800724583c79b39fa49ab7b70a64eab343"
+  integrity sha512-fxrfEwLPn/0eXjvtxBz3UDVxivgx3dUkhDWXRxM5NW1G2B7aK997Rh4xNi0wJRxl8IQRqfg9GFyH0kct3js+QQ==
   dependencies:
-    "@apollo-elements/lib" "^0.0.4"
+    "@apollo-elements/lib" "^0.0.6"
     apollo-client "^2.4.12"
-    crocks "^0.9.4"
+    crocks "^0.11.1"
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
@@ -1798,10 +1798,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-crocks@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/crocks/-/crocks-0.9.4.tgz#bc4e13da4b3173a8e48af0a620dc83ee7c4b22b0"
-  integrity sha512-iREmN0zHcPibmgP13F/z+PgR7R5Sam4Uf57jsp9Erdvj8dI7EMUHb1bj7mugnX0sGVA6ukAxw2bTuJ+xTad7Vw==
+crocks@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/crocks/-/crocks-0.11.1.tgz#58a59e0a565258ece048540f6f287525e129f08c"
+  integrity sha512-MSaMHvzKugK4iX97VzUty+bdhDN+3MVfGrllye/P7qKGeHnRU7/ich+j0YzIN3SP4cEIFnQplTuAat0c1pLiCg==
 
 cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
