@@ -2,7 +2,8 @@ import { createBrowserHistory, startListener, push, replace } from 'redux-first-
 import UniversalRouter from 'universal-router'
 import {configureStore} from '../store/store';
 import { property } from "lit-element";
-
+import gql from 'graphql-tag';
+import { apolloClient } from "./apollo_client";
 
 // export const routeNames = {
 //     // author
@@ -179,18 +180,57 @@ export const Routing = superclass =>
         // pathName = pathName.replace("/", "");
 
 
-        pathName.substr(0, pathName.lastIndexOf("/")+1);
+        // pathName.substr(0, pathName.lastIndexOf("/")+1);
+
+        console.log(pathName);
+
 
         if(pathName.substr(0, pathName.lastIndexOf("/")+1) !== '/') {
-          pathName = pathName.substr(0, pathName.lastIndexOf("/")+1)
           var pathDetail = pathName.substr(pathName.lastIndexOf("/")+1, 1000)
+          pathName = pathName.substr(0, pathName.lastIndexOf("/")+1)
         }
 
 
-        // console.log(`loading ${pathName}`);
-        // console.log(`loading ${pathDetail}`);
+        console.log(pathName);
+        console.log(pathDetail);
 
-        router.resolve(pathName).then((h) => {
+        router.resolve(pathName).then(async (h) => {
+
+            const data = await apolloClient.mutate({
+              mutation: gql`
+                mutation {
+                  updateRouteDetails(
+                    routePath: "${pathName}"
+                    routeParam: "${pathDetail}"
+                  ) @client {
+                    routePath
+                    routeParam
+                  }
+                }
+              `
+            });
+
+            console.log(data);
+
+
+            // const queryData = await apolloClient.query({
+            //   query: gql`
+            //     query {
+            //       getRouteDetails @client {
+            //         routePath 
+            //         routeParam
+            //       }
+            //     }
+            //   `
+            // });
+          
+
+            // console.log(queryData);
+
+
+
+
+
             this.route = pathName;
             this.routeDetail = pathDetail; 
             // document.body.innerHTML = h
@@ -208,7 +248,7 @@ export const Routing = superclass =>
      * 5) Set loaded state to true if child component doesn't do so via data fetching
      */
     async _loadViewDependency(page) {
-      // console.log(`loading chunk ${page}`);
+      console.log(`loading chunk ${page}`);
 
       switch (page) {
         case "/":

@@ -3,8 +3,6 @@ import { Button } from "@material/mwc-button";
 import { inkReset } from "@andreas-galster/inkling";
 import { HeaderBase } from "./header-base";
 
-console.log('nothing', nothing);
-
 export class HeaderAuthor extends HeaderBase {
   static get styles() { 
     return [

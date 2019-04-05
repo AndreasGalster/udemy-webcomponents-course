@@ -13,7 +13,37 @@ import {
 } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
 import { inkReset, uCSS } from "@andreas-galster/inkling";
 
-export class AuthorHighlight extends LitElement {
+import { apolloClient } from '../utils/apollo_client';
+import { ApolloQuery } from '@apollo-elements/lit-apollo';
+// import {getAuthor} from '../graphql-store/getAuthor';
+import getAuthor from '../graphql-store/getAuthor.graphql';
+import getRouteDetails from '../graphql-store/getRouteDetails.graphql';
+import { nothing } from "lit-html";
+
+
+// export class AuthorHighlight extends LitElement {
+// export class GraphQLTest extends LitElement {
+export class AuthorHighlight extends ApolloQuery {
+  @property({ type: Object }) person = {};
+  client = apolloClient;
+  query = getAuthor;
+
+  constructor() {
+    super();
+    // this.variables = {
+    //   humanId: "tony-robbins"
+    // }
+    this.createVariables();
+  }
+  
+  async createVariables() {
+    let variable = await this.client.query({ query: getRouteDetails});
+    
+    this.variables = {
+      humanId: variable.data.getRouteDetails.routeParam
+    }
+  }
+
   static styles = css`
     :host {
       cursor: pointer;
@@ -65,9 +95,6 @@ export class AuthorHighlight extends LitElement {
 
   `;
 
-  @property({ type: Object }) person = {};
-  // ${this.person.author.pictures.cardPic}
-
   getSocialText(val) {
     switch(val) {
       case 'facebook':
@@ -81,16 +108,32 @@ export class AuthorHighlight extends LitElement {
     }
   }
 
-
   render() {
-    return html`
-      ${inkReset}
+    const { data, error, loading } = this;
+    // const { person = {} } = data || {}
+    const person = data.getAuthor || {};
+
+    console.log(person);
+
+    console.log(this.variables);
+    if(!this.variables) {
+      return nothing;
+    }
+
+    return (
+        loading ? html`
+          <what-spin></what-spin>`
+      : error ? html`
+          <h1>😢 Such Sad, Very Error! 😰</h1>
+          <div>${error ? error.message : 'Unknown Error'}</div>`
+      : html`
+          ${inkReset}
 
         <mwc-card>
-            <img src=${this.person.author.pictures.profilePic}>
+            <img src=${person.pictures.profilePic}>
 
             <h1>Categories</h1>
-            ${this.person.author.categories.map(
+            ${person.categories.map(
               c =>
                 html`
                   <mwc-chip>${c}</mwc-chip>
@@ -98,7 +141,7 @@ export class AuthorHighlight extends LitElement {
             )}
 
             <h1>Followers</h1>
-            ${this.person.author.socialMedia.map(
+            ${person.socialMedia.map(
               c =>
                 html`
                   <a href=${c.link}>
@@ -107,9 +150,41 @@ export class AuthorHighlight extends LitElement {
                   </a>
                 `
             )}
-        </mwc-card>
-    `;
+        </mwc-card>          
+      `
+    );
+
   }
+
+
+  // render() {
+  //   return html`
+  //     ${inkReset}
+
+  //       <mwc-card>
+  //           <img src=${this.person.author.pictures.profilePic}>
+
+  //           <h1>Categories</h1>
+  //           ${this.person.author.categories.map(
+  //             c =>
+  //               html`
+  //                 <mwc-chip>${c}</mwc-chip>
+  //               `
+  //           )}
+
+  //           <h1>Followers</h1>
+  //           ${this.person.author.socialMedia.map(
+  //             c =>
+  //               html`
+  //                 <a href=${c.link}>
+  //                   <img src='../assets/${c.networkName}-icon.svg'>
+  //                   <p>${new Intl.NumberFormat('en-US').format(c.count)} ${this.getSocialText(c.networkName)}</p>
+  //                 </a>
+  //               `
+  //           )}
+  //       </mwc-card>
+  //   `;
+  // }
 }
 
 customElements.define("author-highlight", AuthorHighlight);

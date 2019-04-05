@@ -6,7 +6,8 @@ import { setContext } from 'apollo-link-context';
 import { RetryLink } from 'apollo-link-retry';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { persistCache, CachePersistor } from 'apollo-cache-persist';
-
+import gql from 'graphql-tag';
+import {getRouteDetails} from '../graphql-store/getRouteDetails';
 
 // First we set the URL for the API endpoint
 // Defaults to localhost on dev, and URL on production
@@ -66,7 +67,71 @@ const defaultOptions = {
 const apolloClient = new ApolloClient({
   cache: cache,
   link: httpLinkWithAuthToken,
-  defaultOptions: defaultOptions
+  defaultOptions: defaultOptions,
+  typeDefs: gql`
+    type Route {
+      routePath: String
+      routeParam: String
+    }
+
+    extend type Query {
+      getRouteDetails: Route
+    }
+
+    extend type Mutation {
+      updateRouteDetails(routePath: String, routeParam: String): Route
+    }
+  `,  
+  resolvers: {
+    Query: {
+      // getRouteDetails: (root, args, context, info) => ({routePath: 'bla', routeParam: 'blubb'})
+      getRouteDetails(_, __, {cache}) {
+        const { routeDetails } = cache.readQuery({ query: getRouteDetails });
+        console.log('running resolver');
+        console.log(routeDetails);
+      //   // return a read from the cache
+      }          
+      // Or make a remote API call
+    },
+    Mutation: {
+      updateRouteDetails(_, {routePath, routeParam}, {cache}) {
+        console.log('running update route resolver');
+
+        console.log(cache);
+        console.log(routePath);
+        console.log(routeParam);
+
+        cache.writeData({ 
+          data: { 
+            getRouteDetails: {
+              __typename: 'Route',
+              routePath, 
+              routeParam
+            } 
+          } 
+        })
+      }
+    }
+
+    // Route: {
+    //   isInCart: (route, _args, { cache }) => {
+    //     const { cartItems } = cache.readQuery({ ,
+    //       query: GET_CART_ITEMS 
+    //     });
+    //     return cartItems.includes(route.id);
+    //   },
+    // },  
+  }
+});
+
+cache.writeData({
+  data: {
+    getRouteDetails: {
+      __typename: 'Route',
+      routePath: '',
+      routeParam: ''
+    },
+  },
 });
 
 // persistCache({

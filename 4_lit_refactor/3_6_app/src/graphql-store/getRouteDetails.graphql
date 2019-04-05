@@ -1,0 +1,6 @@
+query getRouteDetails {
+    getRouteDetails @client {
+        routePath 
+        routeParam
+    }
+}

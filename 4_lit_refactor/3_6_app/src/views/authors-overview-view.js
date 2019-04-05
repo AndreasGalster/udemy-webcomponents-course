@@ -12,14 +12,77 @@ import {
   } from "@andreas-galster/inkling/dist/ink-layout-helpers-lit";
 
 import { inkFlexGrid } from "@andreas-galster/inkling/dist/ink-flex-grid-lit";
+import gql from 'graphql-tag';
+import { apolloClient } from '../utils/apollo_client';
 
-@customElement("authors-overview-view")
-export class AuthorsOverviewView extends PageViewElement {
+
+// Compute graphql documents statically for performance
+const query = gql`
+  query($limit: Int, $offset: Int) {
+    getAuthors(limit: $limit, offset: $offset) {
+      _id
+      firstName
+      lastName
+      typeOfPerson 
+      quotes {
+        _id
+        authorId
+        quote
+      }
+      books {
+        _id
+        humanId
+        authorId
+        title
+        teaser
+        image
+        introduction
+        reviewText
+        reviewVideo
+        keyTakeaways
+        audioBook
+      }
+    }
+
+  }
+`;
+
+
+  @customElement("authors-overview-view")
+  export class AuthorsOverviewView extends PageViewElement {
+	constructor() {
+		super();
+		this.client = apolloClient;
+		this.query = query;
+		this.variables = {
+			limit: 3,
+			offset: 0
+		}
+	}
+
 	static styles = css`
 		${uCSS(inkFlexGrid)}
 	`;
 
+
+
+	
 	render() {
+		// const { data, error, loading } = this;
+		// const { authors = {} } = data || {}
+		// return (
+		// 	loading ? html`
+		// 	  <what-spin></what-spin>`
+		//   : error ? html`
+		// 	  <h1>😢 Such Sad, Very Error! 😰</h1>
+		// 	  <div>${error ? error.message : 'Unknown Error'}</div>`
+		//   : html`
+		// 	  <div>it loaded</div>
+		//   `
+		// );
+	
+
+
 		return html`
 			<style>
 

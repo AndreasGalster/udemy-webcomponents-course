@@ -1,0 +1,51 @@
+query getAuthor($humanId: String) {
+    getAuthor(humanId: $humanId) {
+        _id
+        humanId
+        firstName
+        lastName
+        pictures {
+            headerPic
+            profilePic
+            cardPic
+        }
+        socialMedia {
+            networkName
+            count
+            link
+        }
+        categories
+        typeOfPerson 
+        quotes {
+            _id
+            authorId
+            quote
+        }
+        books {
+            _id
+            humanId
+            authorId
+            title
+            teaser
+            image
+            introduction
+            reviewText
+            reviewVideo
+            keyTakeaways
+            audioBook
+        }    
+    }
+
+}
+
+
+
+
+# query getAuthor {
+#     getAuthor(humanId: "darren-hardy") {
+#         _id
+#         humanId
+#         firstName
+#         lastName
+#     }
+# }
