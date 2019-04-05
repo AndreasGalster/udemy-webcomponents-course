@@ -20,15 +20,15 @@
     "test:es5:bs": "karma start karma.es5.bs.config.js"    
   },
   "devDependencies": {
-    "husky": "^1.0.0",
-    "lint-staged": "^8.0.0",
-    "@open-wc/eslint-config": "^0.3.0",
-    "@open-wc/prettier-config": "^0.1.0",
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.0",
-    "@open-wc/testing": "^0.9.0",
-    "@open-wc/testing-karma": "^0.4.0",
-    "webpack-merge": "^4.1.5",
-    "@open-wc/testing-karma-bs": "^0.2.0"    
+    "husky": "1.3.1",
+    "lint-staged": "8.1.1",
+    "@open-wc/eslint-config": "0.3.8",
+    "@open-wc/prettier-config": "0.1.5",
+    "@commitlint/cli": "7.4.0",
+    "@commitlint/config-conventional": "7.3.1",
+    "@open-wc/testing": "0.9.11",
+    "@open-wc/testing-karma": "0.4.7",
+    "webpack-merge": "4.2.1",
+    "@open-wc/testing-karma-bs": "0.2.7"    
   }
 }
