@@ -654,10 +654,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@captaincodeman/redux-connect-element@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@captaincodeman/redux-connect-element/-/redux-connect-element-1.0.0-beta.0.tgz#1e1bbab7d3e02fc13e612cf20b3102b2b4b550f8"
-  integrity sha512-bQGhIdcuXpnS3tcdorATCtInEjfDf+Dszi/5jGWkkAshftDWYpRkHsh8Bh/c1GDy9B9nU27StgXo/Fc6QKBxfw==
+"@captaincodeman/redux-connect-element@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@captaincodeman/redux-connect-element/-/redux-connect-element-2.0.0.tgz#6ebdb56d7af7172fbf93002e82465dfc69d2b888"
+  integrity sha512-ezSzK+cxZ+6XHG6bY0jsq8H6Es/ct5eH4VtfJuXE1C+0L9jVYjz973QCYr5Nrp4FPyhhrer1f9g/v7xSjDzV2w==
   dependencies:
     redux "^4.0.0"
 
