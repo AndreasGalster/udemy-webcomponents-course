@@ -37,7 +37,7 @@
     "apollo-link-retry": "^2.2.10",
     "express": "^4.16.4",
     "faker": "^4.1.0",
-    "graphql": "^14.1.1",
+    "graphql": "^15.0.0",
     "graphql-tag": "^2.10.1",
     "lit-element": "^2.0.1",
     "pwa-helpers": "^0.9.1",
