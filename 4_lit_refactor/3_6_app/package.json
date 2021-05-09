@@ -27,7 +27,7 @@
     "@andreas-galster/inkling": "0.3.4",
     "@apollo-elements/lit-apollo": "^0.0.9",
     "@captaincodeman/redux-connect-element": "^1.0.0-beta.0",
-    "@material/mwc-button": "^0.3.6",
+    "@material/mwc-button": "^0.21.0",
     "@webcomponents/webcomponentsjs": "^2.2.4",
     "apollo-cache-inmemory": "^1.5.0",
     "apollo-cache-persist": "^0.1.1",
