@@ -17,7 +17,7 @@
     "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^4.6.0",
     "file-loader": "^3.0.1",
-    "nodemon": "^1.18.9",
+    "nodemon": "1.19.4",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
