@@ -27,7 +27,7 @@
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.0",
     "@open-wc/testing": "^0.9.0",
-    "@open-wc/testing-karma": "^0.4.0",
+    "@open-wc/testing-karma": "0.4.15",
     "webpack-merge": "^4.1.5",
     "@open-wc/testing-karma-bs": "^0.2.0"    
   }
