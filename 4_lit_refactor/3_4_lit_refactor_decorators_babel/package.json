@@ -18,7 +18,7 @@
     "copy-webpack-plugin": "4.6.0",
     "file-loader": "3.0.1",
     "nodemon": "1.18.9",
-    "webpack": "4.29.0",
+    "webpack": "5.95.0",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14"
   },
